@@ -18,8 +18,9 @@ public String printName\(\) {return Name;} –&gt;Jackson parser時不會理會�
 
 而加上註解後  
 `@JsonGetter(“name")  
-public String printName() {return Name;} –>json syntax is {“name" : xxxx}`  
+public String printName() {return Name;} –>json syntax is {"name" : xxxx}`  
   
 `@JsonGetter()  
-public String printName() {return Name;} –>json syntax is {“printName" : xxxx}`
+public String printName() {return Name;} –>json syntax is {  
+"printName" : xxxx}`
 
