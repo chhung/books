@@ -129,6 +129,15 @@ SQL Command config file: Inventory.xml
 		insert into Products (productid, productname, price, productdescription)
 		values (#{productID},#{productName},#{price},#{description})
 	</insert>
+	
+	<insert id="addMultiInventory"
+        parameterType="db.mybatis.pojo.Inventory">
+        insert into Products (productid, productname, price, productdescription)
+        values 
+        <foreach item="item" collection="list" separator=",">
+            (#{item.productID}, #{item.productName}, #{item.price}, #{item.description})
+        </foreach>
+    </insert>
 </mapper>
 ```
 
