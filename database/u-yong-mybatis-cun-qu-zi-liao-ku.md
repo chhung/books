@@ -2,10 +2,15 @@
 
 使用MyBatis時，最主要是要告訴他，資料庫在哪裡？SQL Command及POJO class在哪裡？ 因此，我先切成兩個部份，一個是MyBatis所需的配置，另一個是我們要存取資料表所定義的類別配置。
 
-|  | MyBatis所需的配置 | 存取資料表所定義的類別配置 |
-| :--- | :--- | :--- |
-| 配置檔/類別 | mybatis-config.xml | Inventory.xml Inventory.java |
-| code | `String resource = "db/mybatis/mybatis-config.xml"; InputStream inputStream = Resources.getResourceAsStream(resource); SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream); SqlSession session = sqlSessionFactory.openSession();` | `List inventoryList; inventoryList = session.selectList("listInventory"); inventoryList.forEach( x -> System.out.printf("%d\t%s\t%f\t%s\n", x.getProductID(), x.getProductName(), x.getPrice(), x.getDescription())); session.close();` |
+|  | MyBatis所需的配置 |
+| :--- | :--- |
+| 配置檔/類別 | mybatis-config.xml |
+| code | `String resource = "db/mybatis/mybatis-config.xml"; InputStream inputStream = Resources.getResourceAsStream(resource); SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream); SqlSession session = sqlSessionFactory.openSession();` |
+
+|  | 存取資料表所定義的類別配置 |
+| :--- | :--- |
+| 配置檔/類別 | Inventory.xml Inventory.java |
+| Code | `List inventoryList; inventoryList = session.selectList("listInventory"); inventoryList.forEach(     x -> System.out.printf("%d\t%s\t%f\t%s\n", x.getProductID(),       x.getProductName(), x.getPrice(), x.getDescription())); session.close();` |
 
 以下是目錄結構
 
