@@ -141,3 +141,44 @@ SQL Command config file: Inventory.xml
 </mapper>
 ```
 
+## Annonation
+
+我們還可以簡化，把mapper xml config省略；新增一個interface，把要執行的SQL語句寫在裡面，並同時宣告一個方法，再把該interface寫在mybatis-config.xml裡，如下說明
+
+InvInterface.java file
+
+```java
+package db.mybatis.mapper;
+
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import db.mybatis.pojo.Inventory;
+
+public interface InvInterface {
+	@Select("select * from Products where ${column} > #{value}")
+	List<Inventory> findByColumn(@Param("column") String column, @Param("value") String value);
+}
+```
+
+mybatis-config.xml file 新增mapper
+
+```markup
+<mappers>
+	<mapper class="db.mybatis.mapper.InvInterface" />
+</mappers>
+```
+
+how to use?
+
+```java
+session = sqlSessionFactory.openSession();
+List<Inventory> inventoryList;
+InvInterface mapper = session.getMapper(InvInterface.class);
+inventoryList = mapper.findByColumn("price", "5555");
+```
+
+ref: [https://www.concretepage.com/mybatis-3/mybatis-3-annotation-example-with-select-insert-update-and-delete](https://www.concretepage.com/mybatis-3/mybatis-3-annotation-example-with-select-insert-update-and-delete)
+
+
+
