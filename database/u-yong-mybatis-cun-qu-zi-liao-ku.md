@@ -193,5 +193,30 @@ inventoryList = mapper.findByColumn("price", "5555");
 
 ref: [https://www.concretepage.com/mybatis-3/mybatis-3-annotation-example-with-select-insert-update-and-delete](https://www.concretepage.com/mybatis-3/mybatis-3-annotation-example-with-select-insert-update-and-delete)
 
+## @Mapper
+
+這個annotation--&gt;@Mapper，發揮的地方是在於，若你有自己或用別的container framework來管理物件才會有作用，例如使用Spring framework，配合用@Autowired或ApplicationContext.getBean\(\)就可以拿到該物件，不用自己產生。
+
+方法一：
+
+```java
+@Mapper
+public interface WarehouseMapper {...}
+```
+
+```java
+@Autowired
+private WarehouseMapper dao;
+```
+
+方法二：
+
+```java
+ApplicationContext ac = new ClassPathXmlApplicationContext("mybatis-config.xml");
+InvInterface dao = ac.getBean(InvInterface.class);
+```
+
+總而言之，@Mapper會被視為一個Bean。
+
 
 
