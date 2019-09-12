@@ -143,7 +143,7 @@ SQL Command config file: Inventory.xml
 
 ## Annonation
 
-我們還可以簡化，把mapper xml config省略；新增一個interface，把要執行的SQL語句寫在裡面，並同時宣告一個方法，再把該interface寫在mybatis-config.xml裡，如下說明
+我們還可以簡化，把mapper xml config\(上一段的Inventory.xml\)省略；新增一個interface，把要執行的SQL語句寫在裡面，並同時宣告一個方法，再把該interface寫在mybatis-config.xml裡，如下說明
 
 InvInterface.java file
 
@@ -156,8 +156,21 @@ import org.apache.ibatis.annotations.Select;
 import db.mybatis.pojo.Inventory;
 
 public interface InvInterface {
+	@Results(id="InventoryObj", value = {
+		@Result(property = "productID", column = "ProductID"),
+		@Result(property = "productName", column = "ProductName"),
+		@Result(property = "price", column = "Price"),
+		@Result(property = "description", column = "ProductDescription")
+	})
+	
 	@Select("select * from Products where ${column} > #{value}")
 	List<Inventory> findByColumn(@Param("column") String column, @Param("value") String value);
+	
+	@Update("update Products set ProductName=#{name}, Price=#{price} where ProductID=#{id}")
+	void updateInventory(@Param("name") String name, @Param("price") Double price, @Param("id") Integer id);
+	
+	@Update("update Products set ProductName=#{productName}, Price=#{price}, ProductDescription=#{description} where ProductID=#{productID}")
+	void updateInventorybyObj(Inventory inv);
 }
 ```
 
