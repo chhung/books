@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Emulation](emulation.md)
+* [Lambda](lambda.md)
 * [Thread](thread.md)
 * [Design Pattern](design-pattern/README.md)
   * [Singleton](design-pattern/singleton.md)
