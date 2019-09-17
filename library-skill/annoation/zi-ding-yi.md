@@ -251,3 +251,7 @@ mvn clean package
 
 ![](../../.gitbook/assets/image%20%282%29.png)
 
+## Reference
+
+[http://hannesdorfmann.com/annotation-processing/annotationprocessing101](http://hannesdorfmann.com/annotation-processing/annotationprocessing101)
+
