@@ -1,6 +1,9 @@
 # Table of contents
 
 * [Instruction](README.md)
+* [Misc](misc/README.md)
+  * [Eclipse IDE](misc/eclipse-ide/README.md)
+    * [build maven project has error](misc/eclipse-ide/build-maven-project-has-error.md)
 * [Java匿名內部類別](java-ni-ming-nei-bu-lei-bie.md)
 * [DataBase](database/README.md)
   * [MySQL docker setup](database/mysql-docker-setup.md)
@@ -11,6 +14,7 @@
   * [Jackson - @JsonAnyGetter](json/jackson-jsonanygetter.md)
   * [json名稱開頭大小寫通吃](json/json-ming-chen-kai-tou-da-xiao-xie-tong-chi.md)
 * [Library Skill](library-skill/README.md)
+  * [Spring Validation](library-skill/spring-validation.md)
   * [Google Guava](library-skill/google-guava.md)
   * [Apache StringUtils](library-skill/apache-stringutils.md)
   * [Regular expression](library-skill/regular-expression.md)
