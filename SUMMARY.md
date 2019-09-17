@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Design Pattern](design-pattern/README.md)
+  * [Singleton](design-pattern/singleton.md)
 * [Log4j2](log4j2.md)
 * [Misc](misc/README.md)
   * [Eclipse IDE](misc/eclipse-ide/README.md)
