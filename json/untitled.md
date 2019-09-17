@@ -67,3 +67,29 @@ byte[] jsonBytes = mapper.writeValueAsBytes(myResultObject);
 String jsonString = mapper.writeValueAsString(myResultObject);
 ```
 
+## Generic collections
+
+```java
+String jsonSource = "{\"Andy\":89, \"Batty\":99}";
+
+// 直接傳回Map object
+Map<String, Integer> scoreByName = mapper.readValue(jsonSource, Map.class);
+scoreByName.forEach((k, v) -> log.info("{}:{}", k, v));
+
+// 直接傳回List object
+jsonSource = "[\"Andy\", \"Batty\"]";
+List<String> names = mapper.readValue(jsonSource, List.class);
+names.forEach(x -> log.info("{}", x.toString()));
+		
+// 原本接到什麼就寫入什麼
+mapper.writeValue(new File("names.json"), names);
+```
+
+{% code-tabs %}
+{% code-tabs-item title="names.json" %}
+```text
+["Andy","Batty"]
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
