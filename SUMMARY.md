@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Log4j2](log4j2.md)
 * [Misc](misc/README.md)
   * [Eclipse IDE](misc/eclipse-ide/README.md)
     * [build maven project has error](misc/eclipse-ide/build-maven-project-has-error.md)
