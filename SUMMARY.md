@@ -5,6 +5,7 @@
   * [Singleton](design-pattern/singleton.md)
 * [Log4j2](log4j2.md)
 * [Misc](misc/README.md)
+  * [monitor memory](misc/monitor-memory.md)
   * [Eclipse IDE](misc/eclipse-ide/README.md)
     * [build maven project has error](misc/eclipse-ide/build-maven-project-has-error.md)
 * [Java匿名內部類別](java-ni-ming-nei-bu-lei-bie.md)
