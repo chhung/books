@@ -50,3 +50,47 @@ public class App {
 }
 ```
 
+## Inner static class
+
+```java
+class Sauvage {
+	int age;
+	Sauvage.Ville ville;
+	
+	public static class Ville {
+		String name;
+		double price;
+		static int total;	// 就算是在 inner class裡，這個變數也只會有一份
+	}
+}
+
+public class App {
+	public static void main(String[] args) {
+		Sauvage sau = new Sauvage();
+		sau.ville = new Sauvage.Ville();
+		sau.ville.name = "money";
+		sau.ville.price = 458.236;
+		sau.ville.total = 954;
+		
+		Sauvage sau2 = new Sauvage();
+		sau2.ville = new Sauvage.Ville();
+		
+		System.out.println("name:" + sau2.ville.name);
+		System.out.println("price:" + sau2.ville.price);
+		System.out.println("total:" + sau2.ville.total);
+	}
+}
+```
+
+{% code-tabs %}
+{% code-tabs-item title="console output:" %}
+```text
+name:null
+price:0.0
+total:954
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+
+
