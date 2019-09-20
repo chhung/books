@@ -27,6 +27,7 @@
   * [Jackson - @JsonAnyGetter](json/jackson-jsonanygetter.md)
   * [json名稱開頭大小寫通吃](json/json-ming-chen-kai-tou-da-xiao-xie-tong-chi.md)
 * [Library Skill](library-skill/README.md)
+  * [JUnit](library-skill/junit.md)
   * [Spring Validation](library-skill/spring-validation.md)
   * [Google Guava](library-skill/google-guava.md)
   * [Apache StringUtils](library-skill/apache-stringutils.md)
